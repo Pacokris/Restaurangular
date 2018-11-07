@@ -1,13 +1,13 @@
-import { DataSource } from '@angular/cdk/collections';
-import { MatPaginator, MatSort } from '@angular/material';
-import { map } from 'rxjs/operators';
-import { Observable, of as observableOf, merge } from 'rxjs';
+import {DataSource} from '@angular/cdk/collections';
+import {MatPaginator, MatSort} from '@angular/material';
+import {map} from 'rxjs/operators';
+import {merge, Observable, of as observableOf} from 'rxjs';
 
 // TODO: Replace this with your own data model type
 export interface DishTableItem {
   name: string;
   id: number;
-  price?: number; 
+  price?: number;
 }
 
 // TODO: replace this with real data from your application
@@ -50,7 +50,7 @@ export class DishTableDataSource extends DataSource<DishTableItem> {
       this.sort.sortChange
     ];
 
-    // Set the paginator's length
+    // Set the paginators length
     this.paginator.length = this.data.length;
 
     return merge(...dataMutations).pipe(map(() => {
@@ -62,7 +62,8 @@ export class DishTableDataSource extends DataSource<DishTableItem> {
    *  Called when the table is being destroyed. Use this function, to clean up
    * any open connections or free any held resources that were set up during connect.
    */
-  disconnect() {}
+  disconnect() {
+  }
 
   /**
    * Paginate the data (client-side). If you're using server-side pagination,
@@ -85,10 +86,14 @@ export class DishTableDataSource extends DataSource<DishTableItem> {
     return data.sort((a, b) => {
       const isAsc = this.sort.direction === 'asc';
       switch (this.sort.active) {
-        case 'name': return compare(a.name, b.name, isAsc);
-        case 'id': return compare(+a.id, +b.id, isAsc);
-        case 'price': return compare(a.price, b.price, isAsc);
-        default: return 0;
+        case 'name':
+          return compare(a.name, b.name, isAsc);
+        case 'id':
+          return compare(+a.id, +b.id, isAsc);
+        case 'price':
+          return compare(a.price, b.price, isAsc);
+        default:
+          return 0;
       }
     });
   }

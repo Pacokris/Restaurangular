@@ -16,7 +16,7 @@ export class QuickLunchService {
     { id: 1, title: 'Marguerite', description: 'base tomate, mozzarella, olives', price: 7.70 },
     { id: 2, title: 'Reine', description: 'base tomate, jambon blanc, champignons, mozzarella', price: 8.90 },
     { id: 3, title: 'Royale', description: 'base tomate, jambon blanc, champignons, mozzarella, œuf, crème', price: 10.00 },
-    { id: 4, title: 'Verde', description: 'base tomate, fondue de poireaux, poivrons, tomates fraîches, mozzarella, roquette, persillade',price: 9.30 }
+    { id: 4, title: 'Verde', description: 'base tomate, fondue de poireaux, poivrons, tomates fraîches, mozzarella, roquette, persillade', price: 9.30 }
   ];
 
   galettes: Food[] = [
